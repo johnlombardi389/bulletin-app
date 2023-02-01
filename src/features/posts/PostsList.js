@@ -1,10 +1,21 @@
 import { useSelector } from "react-redux";
 
 const PostsList = () => {
+  // Get all posts in state
+  const posts = useSelector((state) => state.posts);
+
+  const renderedPosts = posts.map((post) => (
+    <article key={post.id}>
+      <h3>{post.title}</h3>
+      <p>{post.content.substring(0, 100)}</p>
+    </article>
+  ));
+
   return (
-    <div>
-      <h1>Posts</h1>
-    </div>
+    <section>
+      <h2>Posts</h2>
+      {renderedPosts}
+    </section>
   );
 };
 
