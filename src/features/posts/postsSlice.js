@@ -5,12 +5,10 @@ const initialState = [
   { id: 2, title: "Creating Slices", content: "This is my first slice." },
 ];
 
-const postsSlice = (createSlice = {
+const postsSlice = createSlice({
   name: "posts",
   initialState,
-  reducers: [
-    // actions
-  ],
+  reducers: {},
 });
 
 export const selectAllPosts = (state) => state.posts;
