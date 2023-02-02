@@ -7,6 +7,10 @@ const PostsList = () => {
   // Get all posts in state
   const posts = useSelector(selectAllPosts);
 
+  const orderedPosts = posts
+    .slice()
+    .sort((a, b) => b.date.localeCompare(a.date));
+
   const renderedPosts = posts.map((post) => (
     <article key={post.id}>
       <h3>{post.title}</h3>
